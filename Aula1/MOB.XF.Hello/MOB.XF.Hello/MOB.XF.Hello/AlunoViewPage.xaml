@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MOB.XF.Hello.AlunoViewPage">
+
+  <ContentPage.Content>
+    <StackLayout Padding="50" Spacing="30">
+      <Label Text="Aluno" FontSize="20" />
+      <StackLayout Padding="30">
+        <Label Text="{Binding Nome}" />
+        <Label Text="{Binding RM}" />
+        <Label Text="{Binding Email}" />
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+
+</ContentPage>
