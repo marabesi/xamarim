@@ -1,0 +1,2 @@
+Z:\Downloads\xamarim\MVVM\MVVM\MVVM.WinPhone\MVVM.WinPhone.csproj;neutral
+Z:\Downloads\xamarim\MVVM\MVVM\MVVM\MVVM.csproj;neutral
