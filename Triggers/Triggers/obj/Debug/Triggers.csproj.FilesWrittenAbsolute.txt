@@ -1,0 +1,12 @@
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile259.AssemblyAttribute.cs
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.App.xaml
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.TriggersPage.xaml
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.App.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.TriggersPage.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/bin/Debug/Triggers.dll.mdb
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/bin/Debug/Triggers.dll
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.dll
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/obj/Debug/Triggers.dll.mdb
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/bin/Debug/Xamarin.Forms.Core.dll
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/bin/Debug/Xamarin.Forms.Platform.dll
+/Users/marabesi/Projects/xamarim/Triggers/Triggers/bin/Debug/Xamarin.Forms.Xaml.dll
