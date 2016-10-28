@@ -10,9 +10,7 @@
 				<Setter Property="VerticalOptions" Value="Center"/>
 				<Setter Property="BackgroundColor" Value="Blue"/>
 				<Setter Property="TextColor" Value="White"/>
-				<Setter Property="FontSize" Value="20"/>
 			</Style>
-<!--
 			<Style TargetType="Label">
 				<Setter Property="HorizontalOptions" Value="Center"/>
 				<Setter Property="VerticalOptions" Value="Center"/>
@@ -29,7 +27,7 @@
 			<Style x:Key="TextBox" TargetType="Entry" BasedOn="{ StaticResource BaseStyle }">
 				<Setter Property="TextColor" Value="Red"/>
 				<Setter Property="BackgroundColor" Value="Aqua"/>
-			</Style>-->
+			</Style>
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
@@ -37,7 +35,7 @@
 		<StackLayout>
 			<Label Text="Hello Xamarim.Forms"/>
 
-<!--			<Entry Placeholder="Type your name" Style="{ StaticResource TextBox}"/>-->
+			<Entry Placeholder="Type your name" Style="{ StaticResource TextBox}"/>
 			<Entry Placeholder="Click here" Style="{StaticResource blueButton}"/>
 		</StackLayout>
 	</ContentPage.Content>

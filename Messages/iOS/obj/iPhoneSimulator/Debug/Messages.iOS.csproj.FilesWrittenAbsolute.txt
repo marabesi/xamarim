@@ -1,0 +1,15 @@
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Messages.iOS.exe.mdb
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Messages.iOS.exe
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/Messages.iOS.exe
+/Users/marabesi/Projects/xamarim/Messages/iOS/obj/iPhoneSimulator/Debug/Messages.iOS.exe.mdb
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Messages.dll
+/Users/marabesi/Projects/xamarim/Messages/iOS/bin/iPhoneSimulator/Debug/Messages.dll.mdb

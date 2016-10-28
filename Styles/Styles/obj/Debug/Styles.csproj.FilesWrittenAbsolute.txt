@@ -12,3 +12,17 @@
 /Users/marabesi/Projects/Styles/Styles/bin/Debug/Xamarin.Forms.Xaml.dll
 /Users/marabesi/Projects/Styles/Styles/obj/Debug/Styles.SimpleStyle.xaml
 /Users/marabesi/Projects/Styles/Styles/obj/Debug/Styles.SimpleStyle.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile259.AssemblyAttribute.cs
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.App.xaml
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.StylesPage.xaml
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.SimpleStyle.xaml
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.App.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.StylesPage.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.SimpleStyle.xaml.g.cs
+/Users/marabesi/Projects/xamarim/Styles/Styles/bin/Debug/Styles.dll.mdb
+/Users/marabesi/Projects/xamarim/Styles/Styles/bin/Debug/Styles.dll
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.dll
+/Users/marabesi/Projects/xamarim/Styles/Styles/obj/Debug/Styles.dll.mdb
+/Users/marabesi/Projects/xamarim/Styles/Styles/bin/Debug/Xamarin.Forms.Core.dll
+/Users/marabesi/Projects/xamarim/Styles/Styles/bin/Debug/Xamarin.Forms.Platform.dll
+/Users/marabesi/Projects/xamarim/Styles/Styles/bin/Debug/Xamarin.Forms.Xaml.dll

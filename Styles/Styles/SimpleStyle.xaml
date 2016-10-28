@@ -10,7 +10,6 @@
 				<Setter Property="VerticalOptions" Value="Center"/>
 				<Setter Property="BackgroundColor" Value="Blue"/>
 				<Setter Property="TextColor" Value="White"/>
-				<Setter Property="FontSize" Value="20"/>
 			</Style>
 			<Style TargetType="Label">
 				<Setter Property="HorizontalOptions" Value="Center"/>

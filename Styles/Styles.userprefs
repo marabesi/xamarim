@@ -1,11 +1,5 @@
 ﻿<Properties StartupConfiguration="{AE027453-2582-4F4E-9F8D-8B1CFDBA8A57}|Default">
-  <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="Styles/SimpleStyle.xaml.cs" Line="9" Column="3" />
-      <File FileName="Styles/StylesPage.xaml.cs" Line="5" Column="47" />
-      <File FileName="Styles/obj/Debug/Styles.SimpleStyle.xaml.g.cs" Line="24" Column="2" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
