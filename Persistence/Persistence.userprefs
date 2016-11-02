@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{7D4FF752-15C8-486B-91C2-A7454E987617}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/App.xaml.cs">
+    <Files>
+      <File FileName="Persistence/App.xaml.cs" Line="27" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Persistence.Droid PreferredExecutionTarget="Android.0021827903" />
+  <MonoDevelop.Ide.ItemProperties.Persistence.iOS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
