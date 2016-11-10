@@ -20,7 +20,7 @@ namespace Persistence.Droid
 				System.Environment.SpecialFolder.Personal
 			);
 
-			var finalPath = Path.Combine(path, fullPath);
+			var finalPath = Path.Combine(fullPath, path);
 			return new SQLiteConnection(finalPath);
 		}
 	}

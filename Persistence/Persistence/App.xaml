@@ -4,21 +4,4 @@
 		<!-- Application resource dictionary -->
 	</Application.Resources>
 
-	<ContentPage.Content>
-		<ListView x:Name="students">
-			<ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding name}"
-                                TextColor="#f35e20" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-		</ListView>
-	</ContentPage.Content>
 </Application>

@@ -28,10 +28,10 @@
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Xamarin.Forms.Platform.Android.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Xamarin.Forms.Platform.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Xamarin.Forms.Xaml.dll
-/Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Persistence.dll
-/Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Persistence.dll.mdb
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/SQLitePCLRaw.core.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/SQLitePCLRaw.lib.e_sqlite3.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/SQLitePCLRaw.provider.e_sqlite3.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/SQLitePCLRaw.batteries_green.dll
 /Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/SQLite-net.dll
+/Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Persistence.dll
+/Users/marabesi/Projects/xamarim/Persistence/Droid/bin/Debug/Persistence.dll.mdb

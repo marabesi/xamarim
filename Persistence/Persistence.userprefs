@@ -1,11 +1,11 @@
-﻿<Properties StartupConfiguration="{7D4FF752-15C8-486B-91C2-A7454E987617}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/App.xaml.cs">
+﻿<Properties StartupConfiguration="{E15EA601-3ECE-466F-9F20-C6C6C1ED5985}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/PersistencePage.xaml.cs">
     <Files>
-      <File FileName="Persistence/App.xaml.cs" Line="27" Column="37" />
+      <File FileName="Persistence/PersistencePage.xaml.cs" Line="24" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Persistence.Droid PreferredExecutionTarget="Android.0021827903" />
-  <MonoDevelop.Ide.ItemProperties.Persistence.iOS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Persistence.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.Persistence.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8F7D3E9C-7446-45E3-A780-B15010A4D808" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

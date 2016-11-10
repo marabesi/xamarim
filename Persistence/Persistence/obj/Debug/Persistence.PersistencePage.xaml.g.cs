@@ -17,8 +17,12 @@ namespace Persistence {
     public partial class PersistencePage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView studentsListView;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(PersistencePage));
+            studentsListView = this.FindByName <global::Xamarin.Forms.ListView>("studentsListView");
         }
     }
 }

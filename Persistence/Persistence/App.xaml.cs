@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using System.Linq;
 
 namespace Persistence
 {
@@ -22,9 +23,7 @@ namespace Persistence
 
 		public App()
 		{
-			InitializeComponent();
-
-			MainPage = new PersistencePage();
+			MainPage = new NavigationPage(new PersistencePage());
 		}
 
 		protected override void OnStart()

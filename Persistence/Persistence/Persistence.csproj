@@ -30,6 +30,12 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="PersistencePage.xaml" />
+    <EmbeddedResource Include="InsertStudent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -43,6 +49,12 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Data\FiapDbContext.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
+    <Compile Include="InsertStudent.xaml.cs">
+      <DependentUpon>InsertStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDetail.xaml.cs">
+      <DependentUpon>StudentDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite-net">

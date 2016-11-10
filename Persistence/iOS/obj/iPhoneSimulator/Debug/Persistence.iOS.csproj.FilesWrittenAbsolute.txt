@@ -11,5 +11,9 @@
 /Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
 /Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
 /Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
+/Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.core.dll
+/Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.provider.sqlite3.dll
+/Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_green.dll
+/Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/SQLite-net.dll
 /Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/Persistence.dll
 /Users/marabesi/Projects/xamarim/Persistence/iOS/bin/iPhoneSimulator/Debug/Persistence.dll.mdb
