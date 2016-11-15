@@ -18,10 +18,12 @@ namespace Persistence
 			student.Name = name.Text;
 			student.Email = email.Text;
 
-			FiapDbContext db = new FiapDbContext();
-			db.Save(student);
+			//FiapDbContext db = new FiapDbContext();
+			//db.Save(student);
 
 			DisplayAlert("Success", "Student has been saved", "OK");
+
+			Navigation.PopAsync(true);
 		}
 	}
 }
