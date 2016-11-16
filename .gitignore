@@ -1,21 +1,16 @@
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.vcxproj.filters
+# Created by https://www.gitignore.io/api/xamarinstudio
 
-# User-specific files (MonoDevelop/Xamarin Studio)
+### XamarinStudio ###
+bin/
+obj/
 *.userprefs
+API/packages
+Aula1/packages
+Messages/packages
+MVVM/packages
+Persistence/packages
+Styles/packages
+Triggers/packages
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+.DS_Store
+.DS_Store?
