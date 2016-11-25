@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IotHandler.NewSensor">
+	<ContentPage.Content>
+		<StackLayout Spacing="20" Padding="20"
+                         VerticalOptions="Center">
+                <Entry Placeholder="Sensor name"
+                       Text="{ Binding Name }" x:Name="txtName"/>
+                <Entry Placeholder="Sensor description"
+                       Text=""/>
+                <Button Text="Save it !" TextColor="White"
+                        BackgroundColor="#77D065"
+                        Clicked="OnSaveNewSensor"/>
+            </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
