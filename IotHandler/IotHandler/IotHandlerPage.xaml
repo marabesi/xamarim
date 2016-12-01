@@ -4,11 +4,5 @@
 		<ToolbarItem Name="+" Clicked="OnNewSensor"></ToolbarItem>
 	</ContentPage.ToolbarItems>
 	
-	<ListView x:Name="SensorView">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <TextCell Text="{Binding Name}" />
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+	<ListView x:Name="SensorView"/>
 </ContentPage>

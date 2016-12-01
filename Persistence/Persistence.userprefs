@@ -1,7 +1,10 @@
-﻿<Properties StartupConfiguration="{E15EA601-3ECE-466F-9F20-C6C6C1ED5985}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/InsertStudent.xaml.cs">
+﻿<Properties StartupConfiguration="{7D4FF752-15C8-486B-91C2-A7454E987617}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Persistence/PersistencePage.xaml">
     <Files>
-      <File FileName="Persistence/InsertStudent.xaml.cs" Line="26" Column="30" />
+      <File FileName="Persistence/PersistencePage.xaml.cs" Line="34" Column="37" />
+      <File FileName="Persistence/InsertStudent.xaml.cs" Line="19" Column="29" />
+      <File FileName="Persistence/App.xaml.cs" Line="5" Column="22" />
+      <File FileName="Persistence/PersistencePage.xaml" Line="3" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Persistence.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />

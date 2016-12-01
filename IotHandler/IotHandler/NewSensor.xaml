@@ -1,15 +1,49 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IotHandler.NewSensor">
+
 	<ContentPage.Content>
-		<StackLayout Spacing="20" Padding="20"
-                         VerticalOptions="Center">
-                <Entry Placeholder="Sensor name"
-                       Text="{ Binding Name }" x:Name="txtName"/>
-                <Entry Placeholder="Sensor description"
-                       Text=""/>
-                <Button Text="Save it !" TextColor="White"
-                        BackgroundColor="#77D065"
-                        Clicked="OnSaveNewSensor"/>
-            </StackLayout>
+		<StackLayout Spacing="20" Padding="20" BackgroundColor="White">
+			<StackLayout.Resources>
+				<ResourceDictionary>
+					<Style x:Key="BorderLayoutWorkaround" TargetType="StackLayout">
+        				<Setter Property="BackgroundColor" Value="#C4C4C4" />
+						<Setter Property="Padding" Value="1" />
+					</Style>
+
+					<Style x:Key="ElementBorderedWorkaround" TargetType="InputView">
+        				<Setter Property="BackgroundColor" Value="#FFFFFF" />
+					</Style>
+				</ResourceDictionary>
+			</StackLayout.Resources>
+			
+			<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+            	<Entry Placeholder="Name" 
+					Text="{ Binding Name }" 
+					x:Name="txtName" 
+					TextColor="#C4C4C4"
+					Style="{ StaticResource ElementBorderedWorkaround }"/>
+			</StackLayout>
+
+			<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+				<Picker x:Name="pckType" 
+					BackgroundColor="White" 
+					Title="Type" 
+					HorizontalOptions="FillAndExpand"
+					TextColor="#C4C4C4"/>
+			</StackLayout>
+
+			<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+				<Editor Text="My awesome sensor!" 
+					x:Name="txtDescription" 
+					HeightRequest="100" 
+					BackgroundColor="White"
+					TextColor="#C4C4C4"/>
+			</StackLayout>
+			
+            <Button Text="Done !" TextColor="White"
+                    BackgroundColor="#56C5D0"
+                    Clicked="OnSaveNewSensor"
+					HeightRequest="60"/>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

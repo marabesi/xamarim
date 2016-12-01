@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 
@@ -18,12 +19,9 @@ namespace Persistence
 			student.Name = name.Text;
 			student.Email = email.Text;
 
-			//FiapDbContext db = new FiapDbContext();
-			//db.Save(student);
+			App.StudentList.Add(student);
 
-			DisplayAlert("Success", "Student has been saved", "OK");
-
-			Navigation.PopAsync(true);
+			Navigation.PopToRootAsync(true);
 		}
 	}
 }

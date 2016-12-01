@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Persistence
 {
@@ -7,6 +8,7 @@ namespace Persistence
 	{
 
 		static FiapDbContext database;
+		static ObservableCollection<Student> studentList;
 
 		public static FiapDbContext Database
 		{
@@ -21,8 +23,25 @@ namespace Persistence
 			}
 		}
 
+		public static ObservableCollection<Student> StudentList
+		{
+			get 
+			{
+				if (studentList == null)
+				{
+					studentList = new ObservableCollection<Student>();
+				}
+
+				return studentList;
+			}
+		}
+
 		public App()
 		{
+			StudentList.Add(new Student() { Name = "Student1", Email = "student@student1.com" });
+			StudentList.Add(new Student() { Name = "Student2", Email = "student@student2.com" });
+			StudentList.Add(new Student() { Name = "Student3", Email = "student@student3.com" });
+
 			MainPage = new NavigationPage(new PersistencePage());
 		}
 

@@ -7,27 +7,38 @@ namespace Persistence
 	public partial class PersistencePage : ContentPage
 	{
 
-		StudentViewModel svm = new StudentViewModel();
-
 		public PersistencePage()
 		{
-			BindingContext = svm;
+			BindingContext = App.StudentList;
 
 			InitializeComponent();
 
-			studentsListView.ItemsSource = svm.students;
+			studentsListView.ItemsSource = App.StudentList;
 
 			Content = studentsListView;
 		}
 
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			this.Focus();
+
+			//studentsListView.ItemsSource = App.StudentList;
+		}
+
 		public void OnSelectedItem(object sender, SelectedItemChangedEventArgs args)
 		{
-			Navigation.PushAsync(new StudentDetail());
+			StudentDetail detailPage = new StudentDetail();
+			detailPage.BindingContext = (Student) args.SelectedItem;
+				
+			Navigation.PushAsync(detailPage);
 		}
 
 		private void OnNewStudent(object sender, EventArgs args)
 		{
-			Navigation.PushAsync(new InsertStudent());
+			InsertStudent newStudent = new InsertStudent();
+
+			Navigation.PushAsync(newStudent);
 		}
 	}
 }
