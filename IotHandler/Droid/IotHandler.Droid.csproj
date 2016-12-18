@@ -92,6 +92,9 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\EntryCustomRender.cs" />
+    <Compile Include="View\EditorCustomRender.cs" />
+    <Compile Include="View\PickerCustomRender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -109,6 +112,20 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\DHT11.png" />
     <AndroidResource Include="Resources\drawable\LED.png" />
+    <AndroidResource Include="Resources\drawable\sensor.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\DHT11.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\LED.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sensor.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DHT11.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\LED.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sensor.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DHT11.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\LED.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sensor.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

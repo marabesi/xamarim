@@ -24,12 +24,13 @@ namespace IotHandler
 				this.pckType.Items.Add(type.Description);
 			}
 
+			btnSave.IsEnabled = false;
+
 			BindingContext = sensor;
 		}
 
 		protected void OnSaveNewSensor(object sender, EventArgs args)
 		{
-
 			sensor.Name = txtName.Text;
 			sensor.Description = txtDescription.Text;
 
@@ -37,16 +38,26 @@ namespace IotHandler
 
 			string image = selectedValue.ToUpper() + ".png";
 
-			sensor.Type = new SensorType(1, "", image);
+			sensor.Type = new SensorType(1, "testing", image);
 
 			App.sensors.Add(sensor);
 
 			Navigation.PopToRootAsync();
 		}
 
-		private void EditorOnFocused(object sender, EventArgs args)
+		protected void OnFormDataChanged(object sender, EventArgs args)
 		{
-			// https://forums.xamarin.com/discussion/20616/placeholder-editor
+			btnSave.IsEnabled = false;
+
+			int isSelected = pckType.SelectedIndex;
+			string description = txtDescription.Text;
+			string name = txtName.Text;
+
+			if (name != null && description != null &&
+			    isSelected >= 0 && name.Length > 3 && description.Length > 3)
+			{
+				btnSave.IsEnabled = true;
+			}
 		}
 	}
 }

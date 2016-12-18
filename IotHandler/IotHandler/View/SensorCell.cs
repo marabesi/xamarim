@@ -6,35 +6,14 @@ namespace IotHandler.View
 	public class SensorCell : ViewCell
 	{
 
-		//Label nameLabel, ageLabel, locationLabel;
-
-		//public static readonly BindableProperty NameProperty = BindableProperty.Create("Name", typeof(string), typeof(SensorCell), "Name");
-
-		//public string Name { 
-		//	get { return (string)GetValue(NameProperty); }
-		//	set { SetValue(NameProperty, value); }
-		//}
-
-		//protected override void OnBindingContextChanged()
-		//{
-		//	base.OnBindingContextChanged();
-
-		//	if (BindingContext != null)
-		//	{
-		//		nameLabel.Text = Name;
-		//	}
-		//}
-
 		public SensorCell()
 		{
-			//instantiate each of our views
 			var image = new Image();
 			StackLayout cellWrapper = new StackLayout();
 			StackLayout horizontalLayout = new StackLayout();
 
 			StackLayout ImageLayout = new StackLayout();
 			ImageLayout.HorizontalOptions = LayoutOptions.Start;
-
 
 			Label left = new Label();
 			Label right = new Label();
@@ -45,9 +24,8 @@ namespace IotHandler.View
 			left.SetBinding(Label.TextProperty, "Name");
 			right.SetBinding(Label.TextProperty, "Description");
 			image.SetBinding(Image.SourceProperty, "Type.Image");
+			image.WidthRequest = 55;
 
-
-			//cellWrapper.BackgroundColor = Color.FromHex("#eee");
 			cellWrapper.Orientation = StackOrientation.Horizontal;
 			cellWrapper.Padding = 10;
 				
@@ -61,6 +39,16 @@ namespace IotHandler.View
 
 			cellWrapper.Children.Add(ImageLayout);
 			cellWrapper.Children.Add(horizontalLayout);
+
+			var moreAction = new MenuItem { Text = "More", IsDestructive = true };
+			//moreAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+			//moreAction.Clicked += async (sender, e) =>
+			//{
+			//	var mi = ((MenuItem)sender);
+			//	Debug.WriteLine("More Context Action clicked: " + mi.CommandParameter);
+			//};
+
+			this.ContextActions.Add(moreAction);
 
 			View = cellWrapper;
 		}

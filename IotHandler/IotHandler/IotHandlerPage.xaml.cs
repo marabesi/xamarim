@@ -12,6 +12,12 @@ namespace IotHandler
 
 			SensorView.RowHeight = 67;
 			SensorView.ItemTemplate = new DataTemplate(typeof(SensorCell));
+			SensorView.ItemTapped += (object sender, ItemTappedEventArgs e) => {
+				DetailSensor detailScreen = new DetailSensor();
+				detailScreen.BindingContext = (Sensor) e.Item;
+
+				Navigation.PushAsync(detailScreen);
+			};
 
 			App.sensors.Add(new Sensor(
 			 	"My beautiful sensor",
@@ -28,15 +34,33 @@ namespace IotHandler
 				0,
 				new SensorType(1, "rola", "icon.png")
 			));
-
-			SensorView.ItemsSource = App.sensors;
-
-			Content = SensorView;
 		}
 
 		protected void OnNewSensor(object sender, EventArgs args)
 		{
 			Navigation.PushAsync(new NewSensor());
+		}
+
+		protected override void OnAppearing()
+		{ 
+			base.OnAppearing();
+
+			SensorView.ItemsSource = App.sensors;
+
+			if (App.sensors.Count == 0)
+			{
+				emptyList.IsVisible = true;
+				SensorView.IsVisible = false;
+
+				Content = emptyList;
+			}
+			else
+			{
+				emptyList.IsVisible = false;
+				SensorView.IsVisible = true;
+
+				Content = SensorView;
+			}
 		}
 	}
 }
