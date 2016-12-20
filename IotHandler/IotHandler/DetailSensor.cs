@@ -17,7 +17,9 @@ namespace IotHandler
 		{
 			Sensor selectedSensor = (Sensor) BindingContext;
 
-			App.sensors.Remove(selectedSensor);
+
+			SensorDataAccess dataAccess = new SensorDataAccess();
+			dataAccess.DeleteSensor(selectedSensor);
 
 			Navigation.PopToRootAsync();
 		}

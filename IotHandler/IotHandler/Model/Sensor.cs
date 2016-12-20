@@ -1,12 +1,51 @@
 ﻿using System;
+using System.ComponentModel;
+using SQLite;
+
 namespace IotHandler
 {
-	public class Sensor
+	[Table("Sensors")]
+	public class Sensor : INotifyPropertyChanged
 	{
-		public String Name { set; get; }
+
+		private int _id;
+
+		[PrimaryKey, AutoIncrement]
+		public int Id
+		{
+			set
+			{
+				this._id = value;
+				OnPropertyChanged(nameof(Id));
+			}
+			get
+			{
+				return this._id;	
+			}
+		}
+
+		private String _name;
+
+		[NotNull]
+		public String Name { 
+			set
+			{
+				this._name = value;
+				OnPropertyChanged(nameof(Name));
+			}
+			get
+			{
+				return this._name;
+			}
+		}
+
 		public String Description { set; get; }
+
 		public String Port { set; get; }
+
 		public int State { set; get; }
+
+		[Ignore]
 		public SensorType Type { set; get; }
 
 		public Sensor()
@@ -25,6 +64,14 @@ namespace IotHandler
 		public override String ToString()
 		{
 			return this.Name;
-		}		
+		}	
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		private void OnPropertyChanged(string propertyName)
+		{
+			this.PropertyChanged?.Invoke(this,
+			  new PropertyChangedEventArgs(propertyName));
+		}
 	}
 }

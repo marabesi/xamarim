@@ -8,6 +8,7 @@ namespace IotHandler
 	public partial class NewSensor : ContentPage
 	{
 		public Sensor sensor = new Sensor();
+		public SensorDataAccess database = new SensorDataAccess();
 
 		public NewSensor()
 		{
@@ -41,6 +42,8 @@ namespace IotHandler
 			sensor.Type = new SensorType(1, "testing", image);
 
 			App.sensors.Add(sensor);
+
+			database.Save(sensor);
 
 			Navigation.PopToRootAsync();
 		}

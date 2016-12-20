@@ -11,6 +11,10 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
+			SensorDataAccess ad = new SensorDataAccess();
+			ad.sensors = sensors;
+			ad.GetSensors();
+
 			MainPage = new NavigationPage(new IotHandlerPage()) { 
 				BarBackgroundColor = Color.FromHex("#C4C4C4"), BarTextColor = Color.White
 			};
