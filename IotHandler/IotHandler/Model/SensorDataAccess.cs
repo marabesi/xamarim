@@ -61,7 +61,7 @@ namespace IotHandler
 				}
 			}
 
-			this.sensors.Remove(sensor);
+			App.sensors.Remove(sensor);
 
 			return id;
 		}
