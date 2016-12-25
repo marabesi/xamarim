@@ -11,10 +11,6 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
-			SensorDataAccess ad = new SensorDataAccess();
-			ad.sensors = sensors;
-			ad.GetSensors();
-
 			MainPage = new NavigationPage(new IotHandlerPage()) { 
 				BarBackgroundColor = Color.FromHex("#C4C4C4"), BarTextColor = Color.White
 			};
@@ -22,12 +18,14 @@ namespace IotHandler
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+			SensorDataAccess dataAccess = new SensorDataAccess();
+			dataAccess.sensors = sensors;
+			dataAccess.GetSensors();
 		}
 
 		protected override void OnSleep()
 		{
-			// Handle when your app sleeps
+			sensors = new ObservableCollection<Sensor>();
 		}
 
 		protected override void OnResume()

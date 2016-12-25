@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IotHandler.iOS", "iOS\IotHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IotHandler.Droid", "Droid\IotHandler.Droid.csproj", "{5AF749CB-7972-4C46-A23B-C8714A60E328}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTHandlerTests", "IoTHandlerTests\IoTHandlerTests.csproj", "{40532232-11BD-404C-BE9A-10CE8E9F6EBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{5AF749CB-7972-4C46-A23B-C8714A60E328}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{5AF749CB-7972-4C46-A23B-C8714A60E328}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{5AF749CB-7972-4C46-A23B-C8714A60E328}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|iPhone.Build.0 = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{40532232-11BD-404C-BE9A-10CE8E9F6EBA}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

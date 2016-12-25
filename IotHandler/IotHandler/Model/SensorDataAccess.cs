@@ -12,6 +12,7 @@ namespace IotHandler
 		private SQLiteConnection database;
 		private static object collisionLock = new object();
 		public ObservableCollection<Sensor> sensors { set; get; }
+		private SensorTypeFactory typeSensorFactory = new SensorTypeFactory();
 
 
 		public SensorDataAccess()
@@ -27,6 +28,7 @@ namespace IotHandler
 				IEnumerable<Sensor> list = database.Query<Sensor>("SELECT * FROM Sensors").AsEnumerable();
 
 				foreach (var sensor in list) {
+					sensor.Type = typeSensorFactory.create(sensor.SensorTypeId);
 					sensors.Add(sensor);
 				}
 

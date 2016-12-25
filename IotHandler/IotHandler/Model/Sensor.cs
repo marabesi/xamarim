@@ -48,6 +48,22 @@ namespace IotHandler
 		[Ignore]
 		public SensorType Type { set; get; }
 
+		private int _sensor_type_id;
+
+		[NotNull]
+		public int SensorTypeId
+		{
+			set
+			{
+				this._sensor_type_id = value;
+				OnPropertyChanged(nameof(SensorTypeId));
+			}
+			get
+			{
+				return this._sensor_type_id;
+			}
+		}
+
 		public Sensor()
 		{
 		}

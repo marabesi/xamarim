@@ -1,9 +1,9 @@
 ﻿using System;
+using SQLite;
 namespace IotHandler
 {
 	public class SensorType
 	{
-
 		public int Id { set; get; }
 
 		public String Description { set; get; }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -9,18 +8,13 @@ namespace IotHandler
 	{
 		public Sensor sensor = new Sensor();
 		public SensorDataAccess database = new SensorDataAccess();
+		private SensorTypeFactory sensorTypeFactory = new SensorTypeFactory();
 
 		public NewSensor()
 		{
 			InitializeComponent();
 
-			List<SensorType> sensorList = new List<SensorType>();
-			sensorList.Add(new SensorType(1, "LED", "led.png"));
-			sensorList.Add(new SensorType(2, "DHT11", "dht11.png"));
-			sensorList.Add(new SensorType(3, "DHT22", "dht22.png"));
-			sensorList.Add(new SensorType(4, "Button", "button.png"));
-
-			foreach (var type in sensorList)
+			foreach (var type in sensorTypeFactory.sensorList)
 			{
 				this.pckType.Items.Add(type.Description);
 			}
@@ -37,9 +31,11 @@ namespace IotHandler
 
 			var selectedValue = pckType.Items[pckType.SelectedIndex];
 
-			string image = selectedValue.ToUpper() + ".png";
+			SensorType createSensorType = sensorTypeFactory.create(selectedValue);
 
-			sensor.Type = new SensorType(1, "testing", image);
+			sensor.Type = createSensorType;
+
+			sensor.SensorTypeId = createSensorType.Id;
 
 			App.sensors.Add(sensor);
 
