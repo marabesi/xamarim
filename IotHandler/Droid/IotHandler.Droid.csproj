@@ -114,6 +114,7 @@
     <Compile Include="View\EditorCustomRender.cs" />
     <Compile Include="View\PickerCustomRender.cs" />
     <Compile Include="Model\DatabaseConnectionAndroid.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -150,6 +151,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\DHT22.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\DHT22.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\DHT22.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />

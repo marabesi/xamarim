@@ -7,18 +7,26 @@ namespace IotHandler
 {
 	public partial class IotHandlerPage : ContentPage
 	{
-		
+
 		public IotHandlerPage()
 		{
 			InitializeComponent();
 
 			SensorView.RowHeight = 67;
 			SensorView.ItemTemplate = new DataTemplate(typeof(SensorCell));
-			SensorView.ItemTapped += (object sender, ItemTappedEventArgs e) => {
+			SensorView.ItemTapped += (object sender, ItemTappedEventArgs e) =>
+			{
+				if (e.Item == null)
+				{
+					return;
+				}
+
 				DetailSensor detailScreen = new DetailSensor();
-				detailScreen.BindingContext = (Sensor) e.Item;
+				detailScreen.BindingContext = (Sensor)e.Item;
 
 				Navigation.PushAsync(detailScreen);
+
+				((ListView)sender).SelectedItem = null;
 			};
 		}
 

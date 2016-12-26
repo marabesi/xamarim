@@ -40,13 +40,13 @@ namespace IotHandler.View
 			cellWrapper.Children.Add(ImageLayout);
 			cellWrapper.Children.Add(horizontalLayout);
 
-			var moreAction = new MenuItem { Text = "More", IsDestructive = true };
-			//moreAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
-			//moreAction.Clicked += async (sender, e) =>
-			//{
-			//	var mi = ((MenuItem)sender);
-			//	Debug.WriteLine("More Context Action clicked: " + mi.CommandParameter);
-			//};
+			var moreAction = new MenuItem { Text = "Delete", IsDestructive = true };
+			moreAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+			moreAction.Clicked += (sender, e) =>
+			{
+				//var mi = ((MenuItem)sender);
+				//Debug.WriteLine("More Context Action clicked: " + mi.CommandParameter);
+			};
 
 			this.ContextActions.Add(moreAction);
 
