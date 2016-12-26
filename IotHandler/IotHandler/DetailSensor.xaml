@@ -4,7 +4,7 @@
 		x:Class="IotHandler.DetailSensor">
 	<ContentPage.Content>
 		<StackLayout>
-			<StackLayout Spacing="20" Padding="20" BackgroundColor="White" VerticalOptions="StartAndExpand">
+			<StackLayout Spacing="20" Padding="20" VerticalOptions="StartAndExpand">
 				<Image Source="{ Binding Type.Image }" 
 					WidthRequest="80" />
 				
@@ -24,7 +24,7 @@
 					TextColor="#C4C4C4"/>
 	        </StackLayout>
 			
-			<StackLayout Spacing="20" Padding="20" BackgroundColor="White" Orientation="Vertical" VerticalOptions="End">
+			<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
 	            <Button Text="Remove sensor :(" TextColor="White"
 	                    BackgroundColor="#FA503A"
 						HeightRequest="60"

@@ -6,7 +6,7 @@
 
 	<ContentPage.Content>
 		<StackLayout>
-			<StackLayout Spacing="20" Padding="20" BackgroundColor="White" VerticalOptions="StartAndExpand">
+			<StackLayout Spacing="20" Padding="20" VerticalOptions="StartAndExpand">
 				<StackLayout.Resources>
 					<ResourceDictionary>
 						<Style x:Key="BorderLayoutWorkaround" TargetType="StackLayout">
@@ -35,7 +35,6 @@
 
 				<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
 					<local:PickerCustom x:Name="pckType" 
-						BackgroundColor="White" 
 						Title="Type" 
 						HorizontalOptions="FillAndExpand"
 						TextColor="#C4C4C4"
@@ -47,13 +46,12 @@
 						Placeholder="My awesome sensor!"
 						x:Name="txtDescription" 
 						HeightRequest="100" 
-						BackgroundColor="White"
 						TextColor="#C4C4C4"
 						TextChanged="OnFormDataChanged"/>
 				</StackLayout>
 	        </StackLayout>
 			
-			<StackLayout Spacing="20" Padding="20" BackgroundColor="White" Orientation="Vertical" VerticalOptions="End">
+			<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
 	            <Button Text="Done !" TextColor="White"
 	                    BackgroundColor="#56C5D0"
 	                    Clicked="OnSaveNewSensor"

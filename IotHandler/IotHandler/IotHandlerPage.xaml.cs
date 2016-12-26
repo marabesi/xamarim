@@ -45,15 +45,11 @@ namespace IotHandler
 			{
 				emptyList.IsVisible = true;
 				SensorView.IsVisible = false;
-
-				Content = emptyList;
 			}
 			else
 			{
 				emptyList.IsVisible = false;
 				SensorView.IsVisible = true;
-
-				Content = SensorView;
 			}
 		}
 	}

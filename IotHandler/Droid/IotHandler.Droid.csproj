@@ -155,6 +155,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\plus.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />

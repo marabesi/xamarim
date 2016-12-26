@@ -5,17 +5,28 @@
 		x:Class="IotHandler.IotHandlerPage">
 	
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Name="+" Clicked="OnNewSensor"></ToolbarItem>
+		<ToolbarItem Icon="plus.png" Clicked="OnNewSensor"></ToolbarItem>
 	</ContentPage.ToolbarItems>
 
-	<ListView x:Name="SensorView"/>
+	<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-	<StackLayout Orientation="Horizontal" x:Name="emptyList" VerticalOptions="Center" HorizontalOptions="Center">
-		<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-			<Image Source="sensor.png" WidthRequest="120"/>
-			<Label Text="You have no sensor :(" FontSize="24" TextColor="#37A0AA"/>
-			<Label Text="Add your sensor and keep" FontSize="20" TextColor="#56C5D0"/>
-			<Label Text=" it on track!" FontSize="20" TextColor="#56C5D0" XAlign="Center"/>
+		<ListView x:Name="SensorView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+		<StackLayout x:Name="emptyList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+			<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+				<Image Source="sensor.png" WidthRequest="120"/>
+				<Label Text="You have no sensor :(" FontSize="24" TextColor="#37A0AA"/>
+				<Label Text="Add your sensor and keep" FontSize="20" TextColor="#56C5D0"/>
+				<Label Text=" it on track!" FontSize="20" TextColor="#56C5D0" XAlign="Center"/>
+			</StackLayout>
+		</StackLayout>
+		
+		<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
+            <Button Text="Add new Sensor :)" TextColor="White"
+                    BackgroundColor="#56C5D0"
+					HeightRequest="60"
+					Clicked="OnNewSensor">
+			</Button>
 		</StackLayout>
 	</StackLayout>
 </ContentPage>
