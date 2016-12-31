@@ -11,9 +11,11 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new IotHandlerPage()) { 
-				BarBackgroundColor = Color.FromHex("#C4C4C4"), BarTextColor = Color.White
-			};
+			//MainPage = new NavigationPage(new IotHandlerPage()) { 
+			//	BarBackgroundColor = Color.FromHex("#C4C4C4"), BarTextColor = Color.White
+			//};
+
+			MainPage = new Login();
 		}
 
 		protected override void OnStart()

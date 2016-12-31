@@ -12,6 +12,8 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
+			NavigationPage.SetHasBackButton(this, false);
+
 			SensorView.RowHeight = 67;
 			SensorView.ItemTemplate = new DataTemplate(typeof(SensorCell));
 			SensorView.ItemTapped += (object sender, ItemTappedEventArgs e) =>
