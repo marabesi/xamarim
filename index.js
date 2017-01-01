@@ -20,7 +20,7 @@ app.use(methodOverride());
 var user = process.env.DB_USER,
     password = process.env.DB_PASSWORD,
     host = process.env.DB_HOST,
-    port = process.env.PORT || 8001;
+    port = process.env.PORT || 8000;
 
 mongoose.connect("mongodb://" + user + ":" + password + "@" + host);
 
