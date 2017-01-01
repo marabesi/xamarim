@@ -43,7 +43,11 @@ var Users = app.users = restful.model('users', mongoose.Schema({
     password: String,
     email: String,
   }))
-  .methods(['get', 'post', 'put', 'delete']);
+  .methods(['get', 'post', 'put', 'delete'])
+  .before('get', verifyToken)
+  .before('post', verifyToken)
+  .before('put', verifyToken)
+  .before('delete', verifyToken);
 
 Users.register(app, '/users');
 
