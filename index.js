@@ -1,4 +1,5 @@
 var express = require('express'),
+    fs = require('fs'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     morgan = require('morgan'),
@@ -6,7 +7,9 @@ var express = require('express'),
     mongoose = restful.mongoose;
 var app = express();
 
-require('dotenv').config();
+if (fs.existsSync('.env')) {
+    require('dotenv').config();
+}
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
