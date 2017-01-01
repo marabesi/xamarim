@@ -1,16 +1,1 @@
-# Created by https://www.gitignore.io/api/xamarinstudio
-
-### XamarinStudio ###
-bin/
-obj/
-*.userprefs
-API/packages
-Aula1/packages
-Messages/packages
-MVVM/packages
-Persistence/packages
-Styles/packages
-Triggers/packages
-
-.DS_Store
-.DS_Store?
+node_modules/

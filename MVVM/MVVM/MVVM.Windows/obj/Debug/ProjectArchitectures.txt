@@ -1,2 +1,0 @@
-Z:\Downloads\xamarim\MVVM\MVVM\MVVM.Windows\MVVM.Windows.csproj;neutral
-Z:\Downloads\xamarim\MVVM\MVVM\MVVM\MVVM.csproj;neutral

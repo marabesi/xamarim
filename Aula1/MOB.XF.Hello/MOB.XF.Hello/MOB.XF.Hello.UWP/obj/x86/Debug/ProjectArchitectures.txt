@@ -1,2 +1,0 @@
-c:\users\mob_uwp\documents\visual studio 2015\Projects\MOB.XF.Hello\MOB.XF.Hello\MOB.XF.Hello.UWP\MOB.XF.Hello.UWP.csproj;x86
-c:\users\mob_uwp\documents\visual studio 2015\Projects\MOB.XF.Hello\MOB.XF.Hello\MOB.XF.Hello\MOB.XF.Hello.csproj;neutral

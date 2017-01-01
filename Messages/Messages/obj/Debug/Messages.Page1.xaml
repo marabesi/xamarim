@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Messages.Page1">
-	<ContentPage.Content>
-		<StackLayout>
-			<Label x:Name="message" Text="Hello there" Style="{StaticResource LabelFiap}"/>
-			<Button Text="Discover a new world" Clicked="OnClicked"/>
-		</StackLayout>
-	</ContentPage.Content>
-</ContentPage>
