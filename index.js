@@ -6,13 +6,19 @@ var express = require('express'),
     mongoose = restful.mongoose;
 var app = express();
 
+require('dotenv').config();
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(methodOverride());
 
-mongoose.connect("mongodb://localhost/iothandler");
+var user = process.env.DB_USER,
+    password = process.env.DB_PASSWORD,
+    host = process.env.DB_HOST;
+
+mongoose.connect("mongodb://" + user + ":" + password + "@" + host);
 
 function verifyToken(req, res, next) {
     var token = req.query.token;

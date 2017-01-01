@@ -10,11 +10,12 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "body-parser": "*",
+    "dotenv": "^2.0.0",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "mongoose": "*",
-    "body-parser": "*",
     "method-override": "*",
+    "mongoose": "*",
     "morgan": "*",
     "node-restful": "*"
   },
