@@ -20,8 +20,7 @@ app.use(methodOverride());
 var user = process.env.DB_USER,
     password = process.env.DB_PASSWORD,
     host = process.env.DB_HOST,
-    port = process.env.PORT || 8001,
-    appHost = process.env.APP_HOST || 'localhost';
+    port = process.env.PORT || 8001;
 
 mongoose.connect("mongodb://" + user + ":" + password + "@" + host);
 
@@ -63,5 +62,5 @@ var Sensors = app.sensors = restful.model('sensors', mongoose.Schema({
 
 Sensors.register(app, '/sensors');
 
-app.listen(port, appHost);
+app.listen(port);
 
