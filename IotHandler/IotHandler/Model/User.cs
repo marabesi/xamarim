@@ -1,6 +1,9 @@
 ﻿using System;
+using SQLite;
+
 namespace IotHandler
 {
+	[Table("User")]
 	public class User
 	{
 		public int Id { set; get; }

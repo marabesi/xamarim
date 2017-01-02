@@ -29,6 +29,11 @@ namespace IotHandler
 			await FindUser(email, password);
 		}
 
+		protected void OnNewUser(object sender, EventArgs args)
+		{
+			Navigation.PushModalAsync(new NewAccountModal());
+		}
+
 		private async Task RotateLoadingImage(VisualElement element, CancellationToken cancel)
 		{
 			while (!cancel.IsCancellationRequested)
@@ -40,17 +45,29 @@ namespace IotHandler
 
 		private async Task FindUser(string user, string password)
 		{
-			//Uri uri = new Uri("http://www.mocky.io/v2/5862d3320f00000c171755c3"); //user not ok
-			Uri uri = new Uri("http://www.mocky.io/v2/5862d03d0f0000af161755bd"); //user ok
+			String userUrl = IHerokuService.USERS_URL + "&email=" + user + "&password=" + password;
+
+			Uri uri = new Uri(userUrl);
 
 			HttpClient client = new HttpClient();
+
 			var response = await client.GetAsync(uri);
 
 			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
 
-				User userFound = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(content);
+				List<User> userFound = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content);
+
+				if (userFound.Count == 0)
+				{
+					await DisplayAlert("Error", "Could not find the requested user", "OK");
+
+					imgLoading.IsVisible = false;
+					btnLogin.IsEnabled = true;
+
+					return;
+				}
 
 				Application.Current.MainPage = new NavigationPage(new IotHandlerPage())
 				{
