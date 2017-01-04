@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using IotHandler.View;
-using System.Collections;
+using IotHandler.Services;
 
 namespace IotHandler
 {
@@ -30,6 +30,17 @@ namespace IotHandler
 
 				((ListView)sender).SelectedItem = null;
 			};
+		}
+
+		protected async void OnLogout(object sender, EventArgs args)
+		{ 
+			var answer = await DisplayAlert("Logging out", "Are you sure ?", "Yes", "No");
+
+			if (answer)
+			{
+				Settings.LoginToken = "";
+				Application.Current.MainPage = new Login();
+			}
 		}
 
 		protected void OnNewSensor(object sender, EventArgs args)

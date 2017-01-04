@@ -4,18 +4,30 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Net.Http;
 using System.Collections.Generic;
+using IotHandler.View;
+using IotHandler.Services;
 
 namespace IotHandler
 {
 	public partial class Login : ContentPage
 	{
+
+		private SpinnerLoadingAnimation animation = new SpinnerLoadingAnimation();
+
 		public Login()
 		{
 			InitializeComponent();
 
-			RotateLoadingImage(imgLoading, new CancellationToken());
+			animation.Rotate(imgLoading, new CancellationToken());
 
 			imgLoading.IsVisible = false;
+
+			String CurrentToken = Settings.LoginToken;
+
+			if (!CurrentToken.Equals(""))
+			{
+				redirectToDashboard();
+			}
 		}
 
 		protected async void OnLogin(object sender, EventArgs args)
@@ -32,15 +44,6 @@ namespace IotHandler
 		protected void OnNewUser(object sender, EventArgs args)
 		{
 			Navigation.PushModalAsync(new NewAccountModal());
-		}
-
-		private async Task RotateLoadingImage(VisualElement element, CancellationToken cancel)
-		{
-			while (!cancel.IsCancellationRequested)
-			{ 
-				await element.RotateTo(360, 1000);
-				await element.RotateTo(0, 0);
-			}
 		}
 
 		private async Task FindUser(string user, string password)
@@ -69,11 +72,9 @@ namespace IotHandler
 					return;
 				}
 
-				Application.Current.MainPage = new NavigationPage(new IotHandlerPage())
-				{
-					BarBackgroundColor = Color.FromHex("#C4C4C4"),
-					BarTextColor = Color.White
-				};
+				Settings.LoginToken = "123456";
+
+				redirectToDashboard();
 
 				return;
 			}
@@ -82,6 +83,15 @@ namespace IotHandler
 			btnLogin.IsEnabled = true;
 
 			await DisplayAlert("Error", "Could not find the requested user", "OK");
+		}
+
+		protected void redirectToDashboard()
+		{ 
+			Application.Current.MainPage = new NavigationPage(new IotHandlerPage())
+			{
+				BarBackgroundColor = Color.FromHex("#C4C4C4"),
+				BarTextColor = Color.White
+			};
 		}
 	}
 }

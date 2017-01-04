@@ -5,7 +5,7 @@
 		x:Class="IotHandler.IotHandlerPage">
 	
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Icon="plus.png" Clicked="OnNewSensor"></ToolbarItem>
+		<ToolbarItem Icon="logout.png" Clicked="OnLogout"></ToolbarItem>
 	</ContentPage.ToolbarItems>
 
 	<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
