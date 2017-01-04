@@ -1,10 +1,11 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using IotHandler.Services;
 
 namespace IotHandler
 {
-	public partial class NewSensor : ContentPage
+	public partial class NewSensor : ContentPage, IFormDataChanged
 	{
 		public Sensor sensor = new Sensor();
 		public SensorDataAccess database = new SensorDataAccess();
@@ -44,7 +45,7 @@ namespace IotHandler
 			Navigation.PopToRootAsync();
 		}
 
-		protected void OnFormDataChanged(object sender, EventArgs args)
+		public void OnFormDataChanged(object sender, EventArgs args)
 		{
 			btnSave.IsEnabled = false;
 

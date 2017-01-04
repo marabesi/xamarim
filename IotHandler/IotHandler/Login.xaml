@@ -21,10 +21,11 @@
 				
 				<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
 	            	<local:EntryCustom Placeholder="Email" 
-						Text="{ Binding Name }" 
+						Text="{ Binding Email }" 
 						x:Name="txtEmail" 
 						TextColor="#C4C4C4"
-						Style="{ StaticResource ElementBorderedWorkaround }">
+						Style="{ StaticResource ElementBorderedWorkaround }"
+						TextChanged="OnFormDataChanged">
 					</local:EntryCustom>
 				</StackLayout>
 
@@ -34,7 +35,8 @@
 						Text="{ Binding Password }" 
 						x:Name="txtPassword" 
 						TextColor="#C4C4C4"
-						Style="{ StaticResource ElementBorderedWorkaround }">
+						Style="{ StaticResource ElementBorderedWorkaround }"
+						TextChanged="OnFormDataChanged">
 					</local:EntryCustom>
 				</StackLayout>
 				<StackLayout>

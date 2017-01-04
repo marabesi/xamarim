@@ -9,7 +9,7 @@ using IotHandler.Services;
 
 namespace IotHandler
 {
-	public partial class Login : ContentPage
+	public partial class Login : ContentPage, IFormDataChanged
 	{
 
 		private SpinnerLoadingAnimation animation = new SpinnerLoadingAnimation();
@@ -21,6 +21,8 @@ namespace IotHandler
 			animation.Rotate(imgLoading, new CancellationToken());
 
 			imgLoading.IsVisible = false;
+
+			btnLogin.IsEnabled = false;
 		}
 
 		protected async void OnLogin(object sender, EventArgs args)
@@ -85,6 +87,19 @@ namespace IotHandler
 				BarBackgroundColor = Color.FromHex("#C4C4C4"),
 				BarTextColor = Color.White
 			};
+		}
+
+		public void OnFormDataChanged(object sender, EventArgs args)
+		{
+			btnLogin.IsEnabled = false;
+
+			var email = txtEmail.Text;
+			var password = txtPassword.Text;
+
+			if (email != null && password != null && txtEmail.Text.Length >= 3 && txtPassword.Text.Length >= 3) 
+			{
+				btnLogin.IsEnabled = true;
+			}
 		}
 	}
 }

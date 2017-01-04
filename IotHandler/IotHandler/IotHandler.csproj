@@ -80,6 +80,7 @@
     <Compile Include="Model\DataAccess\DatabaseConnection.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Services\Settings.cs" />
+    <Compile Include="Services\IFormDataChanged.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
