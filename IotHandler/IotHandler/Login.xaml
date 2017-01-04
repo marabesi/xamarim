@@ -40,10 +40,11 @@
 					</local:EntryCustom>
 				</StackLayout>
 				<StackLayout>
-					<Button Text="Register a new account" TextColor="White"
+					<Button Text="Login" TextColor="White"
 	                    BackgroundColor="#56C5D0"
 						HeightRequest="60"
-						Clicked="OnNewUser">
+						Clicked="OnLogin"
+						x:Name="btnLogin">
 					</Button>
 				</StackLayout>
 				<StackLayout>
@@ -52,12 +53,11 @@
 	        </StackLayout>
 			
 			<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
-	            <Button Text="Login" TextColor="White"
+				<Button Text="Register a new account" TextColor="White"
 	                    BackgroundColor="#56C5D0"
 						HeightRequest="60"
-						Clicked="OnLogin"
-						x:Name="btnLogin">
-				</Button>
+						Clicked="OnNewUser">
+					</Button>
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>
