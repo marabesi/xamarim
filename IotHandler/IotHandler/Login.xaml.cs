@@ -21,13 +21,6 @@ namespace IotHandler
 			animation.Rotate(imgLoading, new CancellationToken());
 
 			imgLoading.IsVisible = false;
-
-			String CurrentToken = Settings.LoginToken;
-
-			if (!CurrentToken.Equals(""))
-			{
-				redirectToDashboard();
-			}
 		}
 
 		protected async void OnLogin(object sender, EventArgs args)
