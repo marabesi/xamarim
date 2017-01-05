@@ -41,6 +41,7 @@ namespace IotHandler
 		protected async void OnNewAccount(object sender, EventArgs args)
 		{
 			imgLoading.IsVisible = true;
+			btnNewUser.IsEnabled = false;
 
 			String userUrl = IHerokuService.USERS_URL;
 
@@ -70,6 +71,8 @@ namespace IotHandler
 
 				return;
 			}
+
+			btnNewUser.IsEnabled = true;
 
 			await DisplayAlert("Error", "Something went wrong", "Ill try again later : (");
 		}
