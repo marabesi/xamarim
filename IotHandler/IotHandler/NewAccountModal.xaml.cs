@@ -4,11 +4,11 @@ using Xamarin.Forms;
 using IotHandler.View;
 using System.Threading;
 using System.Net.Http;
-using Xamarin.Forms;
+using IotHandler.Services;
 
 namespace IotHandler
 {
-	public partial class NewAccountModal : ContentPage
+	public partial class NewAccountModal : ContentPage, IFormDataChanged
 	{
 		private SpinnerLoadingAnimation animation = new SpinnerLoadingAnimation();
 
@@ -19,6 +19,23 @@ namespace IotHandler
 			animation.Rotate(imgLoading, new CancellationToken());
 
 			imgLoading.IsVisible = false;
+
+			btnNewUser.IsEnabled = false;
+		}
+
+		public void OnFormDataChanged(object sender, EventArgs args)
+		{
+			var name = txtName.Text;
+			var email = txtEmail.Text;
+			var password = txtPassword.Text;
+
+			btnNewUser.IsEnabled = false;
+
+			if (name != null && email != null && password != null && 
+			    name.Length > 3 && email.Length > 3 && password.Length > 3)
+			{
+				btnNewUser.IsEnabled = true;
+			}
 		}
 
 		protected async void OnNewAccount(object sender, EventArgs args)
