@@ -20,9 +20,15 @@ app.use(methodOverride());
 var user = process.env.DB_USER,
     password = process.env.DB_PASSWORD,
     host = process.env.DB_HOST,
-    port = process.env.PORT || 8000;
+    port = process.env.PORT || 8000,
+    database = process.env.DB_DATABASE;
 
-mongoose.connect("mongodb://" + user + ":" + password + "@" + host);
+if (user == "" && password == "") {
+    mongoose.connect("mongodb://" + host + "/" + database);
+} else {
+    mongoose.connect("mongodb://" + user + ":" + password + "@" + host);
+}
+
 
 function verifyToken(req, res, next) {
     var token = req.query.token;
