@@ -6,7 +6,7 @@ namespace IotHandler
 	[Table("User")]
 	public class User
 	{
-		public int Id { set; get; }
+		public String _Id { set; get; }
 
 		public String Name { set; get; }
 
@@ -20,9 +20,9 @@ namespace IotHandler
 		{
 		}
 
-		public User(int Id, String Name, String Email, String Password, String Token)
+		public User(String Id, String Name, String Email, String Password, String Token)
 		{
-			this.Id = Id;
+			this._Id = Id;
 			this.Name = Name;
 			this.Email = Email;
 			this.Password = Password;

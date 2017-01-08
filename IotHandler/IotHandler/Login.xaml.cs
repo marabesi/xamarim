@@ -43,7 +43,7 @@ namespace IotHandler
 
 		private async Task FindUser(string user, string password)
 		{
-			String userUrl = IHerokuService.USERS_URL + "&email=" + user + "&password=" + password;
+			String userUrl = string.Format(IHerokuService.USERS_URL + "&email=" + user + "&password=" + password, Settings.LoginToken);
 
 			Uri uri = new Uri(userUrl);
 
@@ -67,7 +67,7 @@ namespace IotHandler
 					return;
 				}
 
-				Settings.LoginToken = "123456";
+				Settings.LoginToken = userFound[0]._Id;
 
 				redirectToDashboard();
 

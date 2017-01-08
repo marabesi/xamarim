@@ -65,6 +65,8 @@ namespace IotHandler
 
 				User newUser = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(content);
 
+				Settings.LoginToken = newUser._Id;
+
 				await DisplayAlert("Success", "Your user has been created, now you can login", "Great!");
 
 				await Navigation.PopModalAsync();
