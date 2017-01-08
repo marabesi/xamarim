@@ -40,6 +40,7 @@ namespace IotHandler
 			{
 				Settings.LoginToken = "";
 				Application.Current.MainPage = new Login();
+				App.sensors.Clear();
 			}
 		}
 

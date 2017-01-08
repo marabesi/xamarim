@@ -61,11 +61,7 @@ namespace IotHandler
 
 			if (response.IsSuccessStatusCode)
 			{
-				var content = await response.Content.ReadAsStringAsync();
-
-				User newUser = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(content);
-
-				Settings.LoginToken = newUser._Id;
+				//var content = await response.Content.ReadAsStringAsync();
 
 				await DisplayAlert("Success", "Your user has been created, now you can login", "Great!");
 

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Collections.Generic;
 using IotHandler.View;
 using IotHandler.Services;
+using System.Collections.ObjectModel;
 
 namespace IotHandler
 {
@@ -13,6 +14,7 @@ namespace IotHandler
 	{
 
 		private SpinnerLoadingAnimation animation = new SpinnerLoadingAnimation();
+		private SensorDataAccess sensorsData = new SensorDataAccess();
 
 		public Login()
 		{
@@ -43,31 +45,33 @@ namespace IotHandler
 
 		private async Task FindUser(string user, string password)
 		{
-			String userUrl = string.Format(IHerokuService.USERS_URL + "&email=" + user + "&password=" + password, Settings.LoginToken);
+			String userUrl = string.Format(IHerokuService.LOGIN_URL);
 
 			Uri uri = new Uri(userUrl);
 
 			HttpClient client = new HttpClient();
 
-			var response = await client.GetAsync(uri);
+			var requestContent = new Dictionary<string, string>();
+
+			requestContent.Add("email", user);
+			requestContent.Add("password", password);
+
+			var response = await client.PostAsync(uri, new FormUrlEncodedContent(requestContent));
 
 			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
 
-				List<User> userFound = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(content);
+				User userFound = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(content);
 
-				if (userFound.Count == 0)
-				{
-					await DisplayAlert("Error", "Could not find the requested user", "OK");
+				Settings.LoginToken = userFound._Id;
 
-					imgLoading.IsVisible = false;
-					btnLogin.IsEnabled = true;
+			   	ObservableCollection<Sensor> ob = new ObservableCollection<Sensor>();
+				sensorsData.sensors = ob;
 
-					return;
-				}
+				sensorsData.GetSensors(userFound._Id);
 
-				Settings.LoginToken = userFound[0]._Id;
+				App.sensors = ob;
 
 				redirectToDashboard();
 
