@@ -38,7 +38,6 @@ var Users = app.users = restful.model('users', mongoose.Schema({
   }))
   .methods(['get', 'post', 'put', 'delete'])
   .before('get', verifyToken)
-  .before('post', verifyToken)
   .before('put', verifyToken)
   .before('delete', verifyToken);
 
