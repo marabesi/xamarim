@@ -87,6 +87,10 @@ app.post('/login', function(req, res) {
     var email = req.body.email;
     var password = req.body.password;
 
+    if (!email || !password) {
+        throw "Email and password is required";
+    }
+
     Users.findOne({
         email: email,
         password: password
