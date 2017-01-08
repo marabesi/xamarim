@@ -83,6 +83,27 @@ function verifyToken(req, res, next) {
     next();
 }
 
+app.post('/login', function(req, res) {
+    var email = req.body.email;
+    var password = req.body.password;
+
+    Users.findOne({
+        email: email,
+        password: password
+    }, function(error, user) {
+        if (error) {
+            res.send(error.message);
+            return handleError(error);
+        }
+
+        if (!user) {
+            throw "Could not find any token";
+        }
+
+        res.contentType('application/json'); 
+        res.send({ "token": user._id });
+    });
+});
 
 app.listen(port);
 
