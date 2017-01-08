@@ -105,7 +105,7 @@ app.post('/login', function(req, res) {
         }
 
         res.contentType('application/json'); 
-        res.send({ "token": user._id });
+        res.send(user);
     });
 });
 
