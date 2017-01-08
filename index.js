@@ -31,7 +31,6 @@ if (user == "" && password == "") {
 }
 
 var Users = app.users = restful.model('users', mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     name: String,
     password: String,
     email: String,
