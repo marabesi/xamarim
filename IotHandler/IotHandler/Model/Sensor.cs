@@ -64,6 +64,22 @@ namespace IotHandler
 			}
 		}
 
+		private String _user_id;
+
+		[NotNull]
+		public String LoginToken
+		{
+			set
+			{
+				this._user_id = value;
+				OnPropertyChanged(nameof(LoginToken));
+			}
+			get
+			{
+				return this._user_id;
+			}
+		}
+
 		public Sensor()
 		{
 		}

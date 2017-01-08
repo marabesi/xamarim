@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using IotHandler.Services;
 
 namespace IotHandler
 {
@@ -11,10 +12,6 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
-			//MainPage = new NavigationPage(new IotHandlerPage()) { 
-			//	BarBackgroundColor = Color.FromHex("#C4C4C4"), BarTextColor = Color.White
-			//};
-
 			MainPage = new Login();
 		}
 
@@ -22,7 +19,7 @@ namespace IotHandler
 		{
 			SensorDataAccess dataAccess = new SensorDataAccess();
 			dataAccess.sensors = sensors;
-			dataAccess.GetSensors();
+			dataAccess.GetSensors(Settings.LoginToken);
 		}
 
 		protected override void OnSleep()
@@ -32,7 +29,9 @@ namespace IotHandler
 
 		protected override void OnResume()
 		{
-			// Handle when your app resumes
+			SensorDataAccess dataAccess = new SensorDataAccess();
+			dataAccess.sensors = sensors;
+			dataAccess.GetSensors(Settings.LoginToken);
 		}
 	}
 }

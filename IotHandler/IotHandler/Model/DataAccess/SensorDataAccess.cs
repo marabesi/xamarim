@@ -21,11 +21,13 @@ namespace IotHandler
 			database.CreateTable<Sensor>();
 		}
 
-		public ObservableCollection<Sensor> GetSensors()
+		public ObservableCollection<Sensor> GetSensors(String UserToken)
 		{
 			lock (collisionLock)
 			{
-				IEnumerable<Sensor> list = database.Query<Sensor>("SELECT * FROM Sensors").AsEnumerable();
+				IEnumerable<Sensor> list = database.Query<Sensor>(
+					string.Format("SELECT * FROM Sensors WHERE LoginToken = '{0}'", UserToken)
+				).AsEnumerable();
 
 				foreach (var sensor in list) {
 					sensor.Type = typeSensorFactory.create(sensor.SensorTypeId);

@@ -38,6 +38,8 @@ namespace IotHandler
 
 			sensor.SensorTypeId = createSensorType.Id;
 
+			sensor.LoginToken = Settings.LoginToken;
+
 			App.sensors.Add(sensor);
 
 			database.Save(sensor);
