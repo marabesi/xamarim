@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using IotHandler;
+using System.Collections.ObjectModel;
 
 namespace IoTHandlerTests
 {
@@ -10,7 +11,9 @@ namespace IoTHandlerTests
 		[Test()]
 		public void ShouldCreateEmptyCollectionToHoldAllTheSensors()
 		{
-			Assert.True(true);
+			ObservableCollection<Sensor> collection = App.sensors;
+
+			Assert.AreEqual(collection.Count, 0);
 		}
 	}
 }
