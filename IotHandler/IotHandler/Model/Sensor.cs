@@ -20,14 +20,15 @@ namespace IotHandler
 			}
 			get
 			{
-				return this._id;	
+				return this._id;
 			}
 		}
 
 		private String _name;
 
 		[NotNull]
-		public String Name { 
+		public String Name
+		{
 			set
 			{
 				this._name = value;
@@ -49,6 +50,12 @@ namespace IotHandler
 		public SensorType Type { set; get; }
 
 		private int _sensor_type_id;
+
+		public String Url { set; get; }
+
+		public int Pin { set; get; }
+
+		public String inOut { set; get; }
 
 		[NotNull]
 		public int SensorTypeId

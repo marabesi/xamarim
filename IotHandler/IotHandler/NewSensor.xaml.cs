@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using IotHandler.Services;
+using XLabs.Forms.Controls;
 
 namespace IotHandler
 {
@@ -23,6 +24,14 @@ namespace IotHandler
 			btnSave.IsEnabled = false;
 
 			BindingContext = sensor;
+
+			inOut.ItemsSource = new[]
+			{
+				"Input",
+				"Output"
+			};
+
+			inOut.CheckedChanged += inOut_CheckedChanged;
 		}
 
 		protected void OnSaveNewSensor(object sender, EventArgs args)
@@ -56,10 +65,22 @@ namespace IotHandler
 			string name = txtName.Text;
 
 			if (name != null && description != null &&
-			    isSelected >= 0 && name.Length > 3 && description.Length > 3)
+				isSelected >= 0 && name.Length > 3 && description.Length > 3)
 			{
 				btnSave.IsEnabled = true;
 			}
+		}
+
+		public void inOut_CheckedChanged(object sender, int e)
+		{
+			var radio = sender as CustomRadioButton;
+
+			if (radio == null || radio.Id == -1)
+			{
+				return;
+			}
+
+			sensor.inOut = radio.Text;
 		}
 	}
 }

@@ -1,64 +1,93 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" 
 		xmlns:local="clr-namespace:IotHandler;assembly=IotHandler"
 		x:Class="IotHandler.NewSensor">
 
 	<ContentPage.Content>
-		<StackLayout>
-			<StackLayout Spacing="20" Padding="20" VerticalOptions="StartAndExpand">
-				<StackLayout.Resources>
-					<ResourceDictionary>
-						<Style x:Key="BorderLayoutWorkaround" TargetType="StackLayout">
-	        				<Setter Property="BackgroundColor" Value="#C4C4C4" />
-							<Setter Property="Padding" Value="1" />
-						</Style>
+		<ScrollView>
+			<StackLayout>
+				<StackLayout Spacing="20" Padding="20" VerticalOptions="StartAndExpand">
+					<StackLayout.Resources>
+						<ResourceDictionary>
+							<Style x:Key="BorderLayoutWorkaround" TargetType="StackLayout">
+		        				<Setter Property="BackgroundColor" Value="#C4C4C4" />
+								<Setter Property="Padding" Value="1" />
+							</Style>
 
-						<Style x:Key="ElementBorderedWorkaround" TargetType="InputView">
-	        				<Setter Property="BackgroundColor" Value="#FFFFFF" />
-						</Style>
-					</ResourceDictionary>
-				</StackLayout.Resources>
+							<Style x:Key="ElementBorderedWorkaround" TargetType="InputView">
+		        				<Setter Property="BackgroundColor" Value="#FFFFFF" />
+							</Style>
+						</ResourceDictionary>
+					</StackLayout.Resources>
+					
+					<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+		            	<local:EntryCustom Placeholder="Name" 
+							Text="{ Binding Name }" 
+							x:Name="txtName" 
+							TextColor="#C4C4C4"
+							Style="{ StaticResource ElementBorderedWorkaround }"
+							TextChanged="OnFormDataChanged">
+							<Entry.Behaviors>
+						        <local:RequiredBehavior />
+						    </Entry.Behaviors>
+						</local:EntryCustom>
+					</StackLayout>
+
+					<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+						<local:PickerCustom x:Name="pckType" 
+							Title="Type" 
+							HorizontalOptions="FillAndExpand"
+							TextColor="#C4C4C4"
+							SelectedIndexChanged="OnFormDataChanged"/>
+					</StackLayout>
+
+					<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+		            	<local:EntryCustom Placeholder="URL" 
+							Text="{ Binding Url }" 
+							x:Name="txtUrl" 
+							Keyboard="Url"
+							TextColor="#C4C4C4"
+							Style="{ StaticResource ElementBorderedWorkaround }"
+							TextChanged="OnFormDataChanged">
+						</local:EntryCustom>
+					</StackLayout>
+
+					<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+		            	<local:EntryCustom Placeholder="PIN" 
+							Keyboard="Numeric"
+							Text="{ Binding Pin }" 
+							x:Name="txtPin" 
+							TextColor="#C4C4C4"
+							Style="{ StaticResource ElementBorderedWorkaround }"
+							TextChanged="OnFormDataChanged">
+						</local:EntryCustom>
+					</StackLayout>
+					
+					<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
+						<local:EditorCustom Text="{ Binding Description }"
+							Placeholder="My awesome sensor!"
+							x:Name="txtDescription" 
+							HeightRequest="100" 
+							TextColor="#C4C4C4"
+							TextChanged="OnFormDataChanged"/>
+					</StackLayout>
+
+					<controls:BindableRadioGroup x:Name="inOut"
+	                                     TextColor="#C4C4C4"
+	                                     VerticalOptions="Start" />
+		        </StackLayout>
 				
-				<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
-	            	<local:EntryCustom Placeholder="Name" 
-						Text="{ Binding Name }" 
-						x:Name="txtName" 
-						TextColor="#C4C4C4"
-						Style="{ StaticResource ElementBorderedWorkaround }"
-						TextChanged="OnFormDataChanged">
-						<Entry.Behaviors>
-					        <local:RequiredBehavior />
-					    </Entry.Behaviors>
-					</local:EntryCustom>
+				<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
+		            <Button Text="Done !" TextColor="White"
+		                    BackgroundColor="#56C5D0"
+		                    Clicked="OnSaveNewSensor"
+							HeightRequest="60"
+							x:Name="btnSave">
+					</Button>
 				</StackLayout>
-
-				<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
-					<local:PickerCustom x:Name="pckType" 
-						Title="Type" 
-						HorizontalOptions="FillAndExpand"
-						TextColor="#C4C4C4"
-						SelectedIndexChanged="OnFormDataChanged"/>
-				</StackLayout>
-
-				<StackLayout Style="{ StaticResource BorderLayoutWorkaround }">
-					<local:EditorCustom Text="{ Binding Description }"
-						Placeholder="My awesome sensor!"
-						x:Name="txtDescription" 
-						HeightRequest="100" 
-						TextColor="#C4C4C4"
-						TextChanged="OnFormDataChanged"/>
-				</StackLayout>
-	        </StackLayout>
-			
-			<StackLayout Spacing="20" Padding="20" Orientation="Vertical" VerticalOptions="End">
-	            <Button Text="Done !" TextColor="White"
-	                    BackgroundColor="#56C5D0"
-	                    Clicked="OnSaveNewSensor"
-						HeightRequest="60"
-						x:Name="btnSave">
-				</Button>
 			</StackLayout>
-		</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
