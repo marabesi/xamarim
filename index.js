@@ -47,7 +47,10 @@ var Sensors = app.sensors = restful.model('sensors', mongoose.Schema({
     description: String,
     type_id: Intl,
     state: Boolean,
-    port: String
+    port: String,
+    url: String,
+    pin: Inlt,
+    in_out: Inlt
 }))
 .methods(['get', 'post', 'put', 'delete'])
 .before('get', verifyToken)
