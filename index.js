@@ -49,8 +49,8 @@ var Sensors = app.sensors = restful.model('sensors', mongoose.Schema({
     state: Boolean,
     port: String,
     url: String,
-    pin: Inlt,
-    in_out: Inlt
+    pin: Intl,
+    in_out: Intl
 }))
 .methods(['get', 'post', 'put', 'delete'])
 .before('get', verifyToken)
@@ -69,7 +69,7 @@ function verifyToken(req, res, next) {
 
     var id = new ObjectId(token);
     
-    var user = Users.findById(id, function(error, userFound) {
+    Users.findById(id, function(error, userFound) {
         if (error) {
             throw new Error('Something went wrong, try again later');;
         }
