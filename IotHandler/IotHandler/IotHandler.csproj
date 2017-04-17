@@ -81,6 +81,7 @@
     <Compile Include="Services\Settings.cs" />
     <Compile Include="Services\IFormDataChanged.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Services\DeviceReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
