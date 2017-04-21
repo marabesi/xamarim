@@ -5,6 +5,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Diagnostics;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.IO;
+using IotHandler.Model.Json;
 
 namespace IotHandler
 {
@@ -15,7 +19,9 @@ namespace IotHandler
 		{
 			InitializeComponent();
 
-			this.RunCounter(new CancellationToken());
+			new Timer((o) => {
+				Device.BeginInvokeOnMainThread(() => this.RunCounter(new CancellationToken()));
+			}, null, 1000, 3000);
 		}
 
 		protected void OnRemoveSensor(object sender, EventArgs args)
@@ -33,26 +39,35 @@ namespace IotHandler
 		{
 			await Task.Run(async () =>
 			{
-				for (long i = 0; i < long.MaxValue; i++)
-				{
-					token.ThrowIfCancellationRequested();
+				token.ThrowIfCancellationRequested();
 
-					await Task.Delay(1000);
+					HttpClient client = new HttpClient();
 
-					Device.BeginInvokeOnMainThread(() =>
+					HttpResponseMessage response = await client.GetAsync("https://thingspeak.com/channels/38265/field/2.json");
+
+					if (response.IsSuccessStatusCode)
 					{
-						double positionTo = 0;
+						var content = await response.Content.ReadAsStringAsync();
 
-						Label a = new Label();
-						a.Text = i.ToString();
+						SensorData collection = JsonConvert.DeserializeObject<SensorData>(content);
+						
+						var last = collection.Feeds.Count - 1;
+						Feed obj = collection.Feeds[last];
+						
+						Device.BeginInvokeOnMainThread(() =>
+						{
+							double positionTo = 0;
 
-						SensorData.Children.Add(a);
+							Label a = new Label();
+							a.Text = obj.Field2;
 
-						positionTo = SensorData.HeightRequest;
+							SensorData.Children.Add(a);
 
-						ScrollData.ScrollToAsync(0, SensorData.Height, true);
-					});
-				}
+							positionTo = SensorData.HeightRequest;
+
+							ScrollData.ScrollToAsync(0, SensorData.Height, true);
+						});
+					}
 			}, token);
 		}
 	}
