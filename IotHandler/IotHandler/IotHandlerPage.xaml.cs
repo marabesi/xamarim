@@ -8,6 +8,8 @@ namespace IotHandler
 	public partial class IotHandlerPage : ContentPage
 	{
 
+		public const String TAG = "IotHandlerPage";
+
 		public IotHandlerPage()
 		{
 			InitializeComponent();
@@ -16,20 +18,31 @@ namespace IotHandler
 
 			SensorView.RowHeight = 67;
 			SensorView.ItemTemplate = new DataTemplate(typeof(SensorCell));
-			SensorView.ItemTapped += (object sender, ItemTappedEventArgs e) =>
-			{
-				if (e.Item == null)
-				{
-					return;
-				}
 
-				DetailSensor detailScreen = new DetailSensor();
-				detailScreen.BindingContext = (Sensor)e.Item;
+            this.onClicked();
+            this.OnRemoveAll();
+		}
 
+		public void onClicked()
+		{
+			MessagingCenter.Subscribe<String, object>("LALA", "DETAIL", (sender, obj) => {
+				Sensor selectedSensor = (Sensor) obj;
+				DetailSensor detailScreen = new DetailSensor(selectedSensor);
+				detailScreen.BindingContext = selectedSensor;
 				Navigation.PushAsync(detailScreen);
+			});
+		}
 
-				((ListView)sender).SelectedItem = null;
-			};
+		public void OnRemoveAll()
+		{
+			MessagingCenter.Subscribe<String>(IotHandlerPage.TAG, "REMOVE", async (sender) => {
+				var answer = await DisplayAlert("Are you sure?", "Do you want to remove the selected sensor?", "Yes", "No");
+
+				if (answer)
+				{
+							
+				}
+			});
 		}
 
 		protected async void OnLogout(object sender, EventArgs args)

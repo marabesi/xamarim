@@ -27,8 +27,8 @@ namespace IotHandler
 
 			inOut.ItemsSource = new[]
 			{
-				"Input",
-				"Output"
+				Sensor.INPUT,
+				Sensor.OUTPUT
 			};
 
 			inOut.CheckedChanged += inOut_CheckedChanged;

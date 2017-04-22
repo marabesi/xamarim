@@ -9,7 +9,8 @@ namespace IotHandler.View
 		public SensorCell()
 		{
 			var image = new Image();
-			StackLayout cellWrapper = new StackLayout();
+			var cellWrapper = new MR.Gestures.StackLayout();
+
 			StackLayout horizontalLayout = new StackLayout();
 
 			StackLayout ImageLayout = new StackLayout();
@@ -28,7 +29,7 @@ namespace IotHandler.View
 
 			cellWrapper.Orientation = StackOrientation.Horizontal;
 			cellWrapper.Padding = 10;
-				
+
 			horizontalLayout.Orientation = StackOrientation.Vertical;
 			horizontalLayout.VerticalOptions = LayoutOptions.EndAndExpand;
 
@@ -40,15 +41,16 @@ namespace IotHandler.View
 			cellWrapper.Children.Add(ImageLayout);
 			cellWrapper.Children.Add(horizontalLayout);
 
-			//var moreAction = new MenuItem { Text = "Delete", IsDestructive = true };
-			//moreAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
-			//moreAction.Clicked += (sender, e) =>
-			//{
-			//	var mi = ((MenuItem)sender);
-			//	//Debug.WriteLine("More Context Action clicked: " + mi.CommandParameter);
-			//};
+			cellWrapper.LongPressing += (s, e) =>
+			{
+				MessagingCenter.Send(IotHandlerPage.TAG, "REMOVE");
+			};
 
-			//this.ContextActions.Add(moreAction);
+			cellWrapper.Tapping += (s, e) =>
+			{
+				var currentSensor = (Sensor)BindingContext;
+				MessagingCenter.Send<String, object>("LALA", "DETAIL", currentSensor);
+			};
 
 			View = cellWrapper;
 		}

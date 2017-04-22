@@ -7,6 +7,8 @@ namespace IotHandler
 	[Table("Sensors")]
 	public class Sensor : INotifyPropertyChanged
 	{
+		public const String INPUT = "Input";
+		public const String OUTPUT = "Output";
 
 		private int _id;
 
@@ -99,6 +101,8 @@ namespace IotHandler
 			this.State = State;
 			this.Type = Type;
 		}
+
+		public String SensorAndTypeDescription => this.Type.Description + " - " + this.inOut;
 
 		public override String ToString()
 		{

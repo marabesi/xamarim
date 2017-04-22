@@ -15,22 +15,27 @@ namespace IotHandler
 	public partial class DetailSensor : ContentPage
 	{
 
-		public DetailSensor()
+		private Sensor selectedSensor;
+
+		public DetailSensor(Sensor selectedSensor)
 		{
 			InitializeComponent();
 
-			new Timer((o) => {
-				Device.BeginInvokeOnMainThread(() => this.RunCounter(new CancellationToken()));
-			}, null, 1000, 3000);
+			this.selectedSensor = selectedSensor;
+
+			if (this.selectedSensor.inOut == Sensor.OUTPUT) 
+			{
+				new Timer((o) => {
+					Device.BeginInvokeOnMainThread(() => this.RunCounter(new CancellationToken()));
+				}, null, 1000, 3000);
+			}
 		}
 
 		protected void OnRemoveSensor(object sender, EventArgs args)
 		{
-			Sensor selectedSensor = (Sensor) BindingContext;
-
 			SensorDataAccess dataAccess = new SensorDataAccess();
 
-			dataAccess.DeleteSensor(selectedSensor);
+			dataAccess.DeleteSensor(this.selectedSensor);
 
 			Navigation.PopToRootAsync();
 		}
@@ -41,33 +46,33 @@ namespace IotHandler
 			{
 				token.ThrowIfCancellationRequested();
 
-					HttpClient client = new HttpClient();
+				HttpClient client = new HttpClient();
 
-					HttpResponseMessage response = await client.GetAsync("https://thingspeak.com/channels/38265/field/2.json");
+				HttpResponseMessage response = await client.GetAsync(this.selectedSensor.Url);
 
-					if (response.IsSuccessStatusCode)
+				if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+				{
+					var content = await response.Content.ReadAsStringAsync();
+
+					SensorData collection = JsonConvert.DeserializeObject<SensorData>(content);
+
+					var last = collection.Feeds.Count - 1;
+					Feed obj = collection.Feeds[last];
+
+					Device.BeginInvokeOnMainThread(() =>
 					{
-						var content = await response.Content.ReadAsStringAsync();
+						double positionTo = 0;
 
-						SensorData collection = JsonConvert.DeserializeObject<SensorData>(content);
-						
-						var last = collection.Feeds.Count - 1;
-						Feed obj = collection.Feeds[last];
-						
-						Device.BeginInvokeOnMainThread(() =>
-						{
-							double positionTo = 0;
+						Label a = new Label();
+						a.Text = obj.Field2;
 
-							Label a = new Label();
-							a.Text = obj.Field2;
+						SensorData.Children.Add(a);
 
-							SensorData.Children.Add(a);
+						positionTo = SensorData.HeightRequest;
 
-							positionTo = SensorData.HeightRequest;
-
-							ScrollData.ScrollToAsync(0, SensorData.Height, true);
-						});
-					}
+						ScrollData.ScrollToAsync(0, SensorData.Height, true);
+					});
+				}
 			}, token);
 		}
 	}

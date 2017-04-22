@@ -13,7 +13,7 @@
 						HorizontalTextAlignment="Center" 
 						TextColor="#37A0AA"/>
 					
-					<Label Text="{ Binding Type.Description }" 
+					<Label Text="{ Binding SensorAndTypeDescription }" 
 						FontSize="24" 
 						HorizontalTextAlignment="Center" 
 						TextColor="#56C5D0"/>
